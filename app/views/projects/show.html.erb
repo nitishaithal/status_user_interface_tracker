@@ -1,0 +1,15 @@
+<br/><br/> 
+<h1> <%= @project.title %> </h1>
+<h4><%= @project.description %></h4>
+<%= link_to "View all posts", :action => "index", :controller => "posts"%><br/>
+<div class ="printing">
+<%= simple_form_for Post.new do |f| %>
+	<%= f.input :title %>
+	<%= f.input :content %>
+	 <%= f.hidden_field :project_id, :value => @project.id %>
+	<%= f.submit %>
+	
+<% end %>
+<br/>
+</div>
+<%= render :partial => 'projects/add_members', :locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee], :project_id => @project.id %>

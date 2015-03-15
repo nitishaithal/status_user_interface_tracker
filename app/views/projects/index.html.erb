@@ -1,0 +1,13 @@
+<br/><br/><br/><br/><br/>
+<div class ="printing">
+<% unless @projects.nil?  %>
+	<% @projects.each do |project| %>
+		<h4>Name: <%= link_to project.title, project %>
+		<p> created:
+			<%= time_ago_in_words(project.created_at) %></p></h4>
+	<% end %>
+<% else %>
+		<h1> no project</h1>
+<% end %>
+</div>
+<br/>

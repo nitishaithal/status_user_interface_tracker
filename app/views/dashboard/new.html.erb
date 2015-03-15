@@ -1,0 +1,25 @@
+<div class = "container">
+<% @user = User.all %>
+<% @user.find(current_user.id).email %>
+<% provide(:title, @user.find(current_user.id).email) %>
+<br/>
+<table>
+  <div class ="fonter">
+  		<br/>
+  		<%= gravatar_for @user %><br/><br/>
+  	<td><%= @user.find(current_user.id).username.upcase %><br/>
+	<h4>Title</u>:
+	<%= link_to @user.find(current_user.id).title, :action => "index", :controller => "posts"%>
+	</h4>
+</div>
+<br/>
+<div class ="fonter">
+<p>
+	<h4>
+	<u> About Me</u>:
+	<%=@user.find(current_user.id).description %>
+</h4>
+</table>
+</p>
+</div>
+</div>
