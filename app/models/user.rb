@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
   :uniqueness => {
     :case_sensitive => false
   }
-
+  def self.search(query)
+    where("username like ?", "%#{query}")
+  end
    has_many :posts
    has_many :comments
 

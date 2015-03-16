@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
 	def edit
 	end
-
+	
 	private
 
 	def project_params

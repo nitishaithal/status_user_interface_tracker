@@ -1,8 +1,4 @@
-<%= simple_form_for @project do |f| %>
-	<% @user.each do |user| %>
-			<br/>
-			<% @user = User.all %>
-				 <%= f.hidden_field :project_id, :value => @project.id %>
-			<%= link_to user.username, {:controller => "projects", :action => "create", :project_id => @project.id }%>
-		<%end %>
+<%= form_tag( :method => "get", id: "members") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+  <%= submit_tag "Search", :name => nil %>
 <% end %>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'projects/index'
   get 'projects/add_members'
+  match ':controller(/:action(/:id))', :via => [:get, :post]
   #get 'projects/show'
   #match '/index' => 'posts#index', :as => :edit, :via => [:get, :post]
 end
